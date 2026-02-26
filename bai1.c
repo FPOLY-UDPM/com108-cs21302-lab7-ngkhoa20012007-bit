@@ -1,6 +1,6 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
+ * Họ và tên: [Nguyễn Vũ Đăng Khoa]
+ * MSSV:      [PS49647]
  * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
  *****************************************************************************/
 
@@ -11,4 +11,33 @@
 
 
 // VIẾT CODE Ở ĐÂY
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[1000];
+    int nguyenAm = 0, phuAm = 0;
+
+    printf("Nhap chuoi: ");
+    fgets(str, sizeof(str), stdin);
+
+    for(int i = 0; i < strlen(str); i++) {
+        char c = tolower(str[i]);   // chuyển về chữ thường cho dễ so sánh
+
+        if(isalpha(c)) {  // chỉ xét nếu là chữ cái
+            if(c == 'a' || c == 'e' || c == 'i' || 
+               c == 'o' || c == 'u' || c == 'y') {
+                nguyenAm++;
+            } else {
+                phuAm++;
+            }
+        }
+    }
+
+    printf("So nguyen am: %d\n", nguyenAm);
+    printf("So phu am: %d\n", phuAm);
+
+    return 0;
+}                
 
